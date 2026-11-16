@@ -1,0 +1,802 @@
+<!doctype html>
+<html lang="et">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kunsti rent Tallinnas – alates 30 € kuus | Kejser Gallery</title>
+<meta name="description" content="Rendi originaalkunsti kontorisse, koju või fotovõtteks alates 30 € kuus. Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal hinna sees. Arvuta hind kalkulaatoris.">
+<meta property="og:title" content="Kunsti rent Tallinnas – alates 30 € kuus | Kejser Gallery">
+<meta property="og:description" content="Originaalkunst sinu seinale kuumaksega. Raamimine, tarne ja paigaldus hinna sees, kord aastas tasuta vahetus.">
+<meta property="og:locale" content="et_EE">
+<link rel="icon" href="img/kejser-logo-valge.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Questrial&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","name":"Kejser Gallery","url":"https://merilinkejser.wixsite.com/my-site-1","email":"merilin.kejser@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Tallinn","addressCountry":"EE"}},
+{"@type":"Service","name":"Kunsti rent","serviceType":"Originaalkunsti rent","provider":{"@type":"Organization","name":"Kejser Gallery"},"areaServed":"Eesti","offers":{"@type":"Offer","price":"30","priceCurrency":"EUR","description":"Kuurent 3% teose hinnast, alates 30 € kuus"}},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Kui palju maksab kunsti rentimine?","acceptedAnswer":{"@type":"Answer","text":"Originaalmaali kuurent on 3% teose hinnast, 1000-eurose teose rent maksab 30 € kuus. Segatehnikas teose kuurent on 5% teose hinnast, alates 20 € kuus."}},
+{"@type":"Question","name":"Kui pikk on minimaalne rendiperiood?","acceptedAnswer":{"@type":"Answer","text":"Pikaajalise rendi minimaalne periood on 12 kuud."}},
+{"@type":"Question","name":"Mis on rendihinna sees?","acceptedAnswer":{"@type":"Answer","text":"Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal ning üks tasuta vahetus aastas."}},
+{"@type":"Question","name":"Mis on segatehnikas teos?","acceptedAnswer":{"@type":"Answer","text":"Segatehnikas teos sünnib mitme tehnika ja materjali koosmõjul – näiteks lõuendile trükitud alus, millele kunstnik lisab käsitsi värve ja muid materjale. Iga teos on ainulaadne ja jõuab seinale raamile pingutatud lõuendina."}},
+{"@type":"Question","name":"Kas renditud teose saab välja osta?","acceptedAnswer":{"@type":"Answer","text":"Jah, teose saab igal ajal välja osta. Tingimused on kirjas pakkumises."}},
+{"@type":"Question","name":"Kas te paigaldate ka väljaspool Harjumaad?","acceptedAnswer":{"@type":"Answer","text":"Jah, paigaldame üle Eesti. Transport ja paigaldus väljaspool Harjumaad on eraldi hinnaga."}},
+{"@type":"Question","name":"Kui palju maksab kunsti rent fotovõtteks?","acceptedAnswer":{"@type":"Answer","text":"Päevarent on 50 € teose kohta, minimaalne tellimus on 150 €. 3 teosest kehtib 10% ja 6 teosest 15% soodustus."}}
+]}
+]}
+</script>
+<style>
+/* Layout: one dark gallery room, same visual language as the K6 page */
+:root{
+  --bg:#0E0D0C;
+  --panel:#171513;
+  --line:#2C2824;
+  --fg:#F2EEE8;
+  --muted:#B4ACA2;
+  --brass:#C9A46A;
+  --brass-deep:#8A6A3B;
+  --btn-fg:#111111;
+  --display:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --text:"Questrial","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--text);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.2}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border-radius:4px;font-family:var(--text);font-size:16px;letter-spacing:.04em;text-decoration:none;cursor:pointer;border:1px solid var(--brass);transition:background .2s,color .2s,border-color .2s}
+.btn-main{background:var(--brass);color:var(--btn-fg)}
+.btn-main:hover{background:var(--fg);border-color:var(--fg)}
+.btn-ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--brass);color:var(--brass)}
+.btn:disabled{opacity:.6;cursor:wait}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+section{padding-block:clamp(64px,9vw,112px)}
+.section-head{max-width:40em;margin-bottom:40px}
+.section-head p{color:var(--muted);margin-top:16px;font-size:18px}
+
+/* top bar */
+.top{padding-block:22px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{display:flex;align-items:center;gap:6px;text-decoration:none}
+.logo img{height:76px;width:auto;margin-block:-8px}
+.logo span{font-family:var(--display);font-size:22px;letter-spacing:.02em;line-height:1.05}
+.top .btn{min-height:44px;padding:0 18px;font-size:14px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(24px,5vw,56px) clamp(56px,8vw,96px)}
+.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.08;margin:18px 0 22px}
+.hero h1 em{font-style:italic;color:var(--brass)}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:30em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.reply{font-size:14px;color:var(--muted);margin-top:14px}
+.price-card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:clamp(24px,4vw,40px)}
+.price-card .big{font-family:var(--display);font-size:clamp(48px,7vw,72px);line-height:1;color:var(--brass);margin:12px 0 6px}
+.price-card .big small{font-size:.35em;color:var(--fg)}
+.price-card ul{margin:24px 0 0;padding:0;list-style:none;display:grid;gap:10px;border-top:1px solid var(--line);padding-top:20px}
+.check li{display:flex;gap:12px}
+.check li::before{content:"✓";color:var(--brass);flex:none}
+
+/* problem */
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,96px);align-items:start}
+.intro .text p{color:var(--muted);font-size:19px;margin-top:20px;max-width:32em}
+.pains{margin:0;padding:0;border-top:1px solid var(--line);counter-reset:p}
+.pains li{list-style:none;padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:baseline;counter-increment:p}
+.pains li::before{content:counter(p,decimal-leading-zero);font-family:var(--display);color:var(--brass);font-size:15px;flex:none}
+
+/* steps */
+.band{background:var(--panel)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{border-top:1px solid var(--brass-deep);padding-top:20px;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:34px;color:var(--brass);display:block;margin-bottom:10px}
+.steps p{color:var(--muted)}
+
+/* benefits */
+.benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(20px,3vw,40px);margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.benefits li{padding:22px 0;border-bottom:1px solid var(--line);display:flex;gap:14px}
+.benefits li::before{content:"";width:18px;height:1px;background:var(--brass);flex:none;margin-top:13px}
+.feature{margin-top:40px;border:1px solid var(--brass-deep);border-radius:4px;padding:clamp(22px,3vw,36px);display:grid;gap:10px;max-width:820px}
+.feature h3{font-size:clamp(24px,3vw,30px)}
+.feature p{color:var(--muted);font-size:18px}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,3vw,32px);align-items:start}
+.calc-in,.calc-out{background:var(--panel);border-radius:4px;padding:clamp(22px,3vw,36px)}
+.calc-out{border:1px solid var(--brass-deep);position:sticky;top:20px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:var(--bg);padding:6px;border-radius:4px;margin-bottom:22px}
+.tabs button{min-height:44px;border:0;border-radius:3px;background:transparent;color:var(--muted);font-family:var(--text);font-size:15px;cursor:pointer;padding:6px 10px;line-height:1.25}
+.tabs button[aria-selected="true"]{background:var(--brass);color:var(--btn-fg)}
+.tab-note{color:var(--muted);font-size:15px;margin-bottom:22px}
+.field{margin-bottom:24px}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.field-top label{margin:0}
+.num{width:96px;text-align:right}
+input[type=range]{width:100%;min-height:44px;accent-color:var(--brass);background:transparent;border:0;padding:0}
+.periods{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;border:0;margin:0 0 24px;padding:0;min-width:0}
+.periods legend{font-size:14px;color:var(--muted);margin-bottom:8px;padding:0}
+.periods label{margin:0}
+.periods input{position:absolute;opacity:0;width:1px;height:1px}
+.periods.two{grid-template-columns:1fr 1fr}
+.periods span{text-align:center;padding:4px 8px;line-height:1.3;display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid var(--line);border-radius:4px;color:var(--fg);cursor:pointer;font-size:15px}
+.periods input:checked + span{border-color:var(--brass);color:var(--brass)}
+.periods input:focus-visible + span{outline:2px solid var(--brass);outline-offset:3px}
+.hint{font-size:14px;color:var(--muted)}
+.out-label{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.out-big{font-family:var(--display);font-size:clamp(40px,6vw,56px);line-height:1.1;color:var(--brass);margin:8px 0 4px}
+.out-sub{color:var(--muted);font-size:15px}
+.out-rows{margin:22px 0 0;border-top:1px solid var(--line)}
+.out-rows div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.out-rows dt{color:var(--muted)}
+.out-rows dd{margin:0;font-family:var(--display);white-space:nowrap}
+.out-incl{margin:22px 0;padding:0;list-style:none;display:grid;gap:8px;font-size:15px}
+.out-extra{font-size:14px;color:var(--fg);border-left:2px solid var(--brass);padding-left:12px;margin-top:16px}
+.calc-out .btn{width:100%}
+.disclaimer{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* about */
+.about{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:start;max-width:900px}
+.initials{width:88px;height:88px;border-radius:50%;border:1px solid var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:28px;color:var(--brass)}
+.about h2{margin-bottom:6px}
+.about .role{color:var(--brass);margin-bottom:18px}
+.about p.body{color:var(--muted);font-size:18px}
+.about .hero-cta{margin-top:26px}
+
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.5vw,32px)}
+.pack{background:var(--panel);border-radius:4px;padding:28px;display:flex;flex-direction:column;gap:8px}
+.pack h3{font-size:26px}
+.pack .count{color:var(--muted)}
+.pack .p{font-family:var(--display);font-size:30px;color:var(--brass);margin:10px 0 16px}
+.pack .btn{margin-top:auto}
+.pack-incl{margin-top:28px}
+.pack-incl ul{display:flex;flex-wrap:wrap;gap:10px 28px;margin:12px 0 0;padding:0;list-style:none}
+
+/* form */
+.book{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,6vw,96px);align-items:start}
+.book .side p{color:var(--muted);margin-top:16px}
+form{display:grid;gap:18px;background:var(--panel);padding:clamp(22px,3vw,36px);border-radius:4px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
+.req{color:var(--brass)}
+.opt{color:var(--muted);font-size:13px}
+input,select,textarea{width:100%;min-height:48px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:var(--text);font-size:16px}
+input[type=file]{padding:10px 14px}
+textarea{min-height:110px;resize:vertical}
+#summary{min-height:150px;font-size:15px}
+input:focus,select:focus,textarea:focus{border-color:var(--brass);outline:none}
+.err{color:#E39A8B;font-size:13px;margin-top:6px}
+.err:empty{display:none}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:14px;color:var(--muted)}
+.consent input{width:22px;min-height:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--brass)}
+.consent label{margin:0;font-size:14px}
+.linkbtn{background:none;border:0;padding:0;color:var(--brass);font:inherit;text-decoration:underline;cursor:pointer}
+.ok{background:var(--panel);border:1px solid var(--brass-deep);border-radius:4px;padding:32px}
+.ok h3{font-size:26px;margin-bottom:10px}
+.ok p{color:var(--muted)}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:var(--display);font-size:20px;position:relative;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:18px;font-family:var(--text);font-size:26px;color:var(--brass);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 22px;max-width:40em}
+
+/* final + footer */
+.final{text-align:center;border-top:1px solid var(--line)}
+.final img{height:150px;width:auto;margin:0 auto 32px;display:block}
+.final h2{font-size:clamp(32px,5vw,56px);font-style:italic}
+.final p{color:var(--muted);margin:18px auto 30px;max-width:30em}
+footer{border-top:1px solid var(--line);padding-block:48px calc(32px + 72px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;font-size:14px;color:var(--muted)}
+.brand-mark{display:flex;align-items:center;gap:6px;text-decoration:none;color:var(--fg)}
+.brand-mark img{height:56px;width:auto}
+.brand-mark span{font-family:var(--display);font-size:19px}
+.foot-info{display:grid;gap:10px;justify-items:end;text-align:right}
+footer .links{display:flex;flex-wrap:wrap;gap:18px}
+
+/* sticky mobile cta */
+.sticky{position:fixed;left:0;right:0;bottom:0;padding:12px max(16px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(14,13,12,.94);border-top:1px solid var(--line);display:none;z-index:20}
+.sticky .btn{width:100%}
+
+/* dialogs */
+dialog{max-width:640px;width:calc(100% - 32px);background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:4px;padding:28px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog h2{font-size:26px;margin-bottom:14px}
+dialog h3{font-family:var(--text);font-size:15px;letter-spacing:.06em;color:var(--brass);margin:18px 0 4px}
+dialog p,dialog li{color:var(--muted);font-size:15px}
+dialog ul{padding-left:20px;margin:6px 0}
+dialog .close{margin-top:24px}
+
+@media (max-width:900px){
+  .hero,.intro,.calc,.book{grid-template-columns:1fr}
+  .calc-out{position:static}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .benefits{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .steps,.benefits,.packs,.f2{grid-template-columns:1fr}
+  .top .btn{display:none}
+  .sticky{display:block}
+  .logo img{height:60px}
+  .logo span{font-size:19px}
+  .final img{height:110px}
+  .about{grid-template-columns:1fr}
+  .foot-info{justify-items:start;text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="logo" href="https://merilinkejser.wixsite.com/my-site-1" target="_blank" rel="noopener" aria-label="Kejser Gallery avaleht">
+    <img src="img/kejser-logo-valge.svg" alt="Kejser Gallery logo" width="28" height="46">
+    <span>Kejser Gallery</span>
+  </a>
+  <a class="btn btn-main" href="#paring">Küsi pakkumist</a>
+</header>
+
+<main>
+  <!-- Hero -->
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Kunsti rent · Tallinn ja Harjumaa</div>
+      <h1>Originaalkunst sinu seinale – <em>alates 30 € kuus</em></h1>
+      <p class="lead">Kontoritele, kodudele ja fotovõteteks. Valime teosed sinuga koos, raamime, toome ja paigaldame – sina naudid tulemust.</p>
+      <div class="hero-cta">
+        <a class="btn btn-main" href="#paring">Küsi pakkumist</a>
+        <a class="btn btn-ghost" href="#kalkulaator">Arvuta hind</a>
+      </div>
+      <p class="reply">Vastan ühe tööpäeva jooksul.</p>
+    </div>
+    <aside class="price-card" aria-label="Rendi hinna näide">
+      <div class="eyebrow">Näide</div>
+      <div class="big">30 € <small>kuus</small></div>
+      <p class="muted">1000-eurose originaalteose rent</p>
+      <ul class="check">
+        <li>Raamimine, tarne ja paigaldus hinna sees</li>
+        <li>Kord aastas tasuta vahetus</li>
+        <li>Teose saab igal ajal välja osta</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Problem -->
+  <section class="wrap intro" aria-labelledby="problem-title">
+    <div class="text">
+      <h2 id="problem-title">Tühi sein ütleb rohkem, kui arvad</h2>
+      <p>Kejser Gallery rendib kunstnike originaalteoseid kuumaksega. Kunst on seinal juba sel kuul, raamimine, tarne ja paigaldus on hinna sees ning kord aastas saad teose tasuta vahetada.</p>
+    </div>
+    <ol class="pains">
+      <li>Originaalkunsti ostmine on suur ühekordne kulu</li>
+      <li>Tühjad seinad mõjuvad külalistele ja klientidele külmalt</li>
+      <li>Pole aega ega teadmisi, mida valida ja kuidas riputada</li>
+      <li>Sama pilt seinal muutub aastatega märkamatuks</li>
+    </ol>
+  </section>
+
+  <!-- How it works -->
+  <section class="band" aria-labelledby="steps-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Samm-sammult</div>
+        <h2 id="steps-title" style="margin-top:14px">Kuidas rent käib</h2>
+      </div>
+      <ol class="steps">
+        <li><p>Arvuta hind kalkulaatoris</p></li>
+        <li><p>Saada päring ja fotod oma seinast</p></li>
+        <li><p>Saad kirjaliku pakkumise ja kuni kolm sobivat teost</p></li>
+        <li><p>Raamime, toome ja paigaldame teosed</p></li>
+        <li><p>Kord aastas vahetame teose tasuta</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="wrap" aria-labelledby="benefits-title">
+    <div class="section-head">
+      <h2 id="benefits-title">Mida sa saad</h2>
+    </div>
+    <ul class="benefits">
+      <li>Originaalmaalid ja segatehnikas teosed otse kunstnikelt</li>
+      <li>Kuumakse alates 30 € – ilma suure ühekordse kuluta</li>
+      <li>Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal hinna sees</li>
+      <li>Kord aastas tasuta vahetus sama kunstniku teise teose vastu</li>
+      <li>Võimalus teos igal ajal välja osta</li>
+      <li>Fotovõteteks päevarent koos turvalise transpordiga</li>
+    </ul>
+    <aside class="feature" aria-labelledby="feature-title">
+      <div class="eyebrow">Lisaks originaalidele</div>
+      <h3 id="feature-title">Segatehnikas teosed – alates 20 € kuus</h3>
+      <p>Segatehnikas teos sünnib mitme tehnika ja materjali koosmõjul – näiteks lõuendile trükitud alus, millele kunstnik lisab käsitsi värve ja muid materjale. Teos on raamile pingutatud ja riputusvalmis, eraldi raami pole vaja. Iga teos on ainulaadne. Hea valik, kui soovid suurt teost soodsama kuumaksega.</p>
+      <p><a class="btn btn-ghost" href="#kalkulaator" data-pick-print>Arvuta segatehnika hind</a></p>
+    </aside>
+  </section>
+
+  <!-- Calculator -->
+  <section class="band" id="kalkulaator" aria-labelledby="calc-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Kalkulaator</div>
+        <h2 id="calc-title" style="margin-top:14px">Arvuta rendi hind</h2>
+      </div>
+      <div class="calc">
+        <div class="calc-in">
+          <div class="tabs" role="tablist" aria-label="Rendi tüüp">
+            <button type="button" role="tab" id="tab-long" aria-selected="true" aria-controls="panel-long">Pikaajaline rent</button>
+            <button type="button" role="tab" id="tab-shoot" aria-selected="false" aria-controls="panel-shoot" tabindex="-1">Fotovõtted ja produktsioonid</button>
+          </div>
+
+          <div id="panel-long" role="tabpanel" aria-labelledby="tab-long">
+            <p class="tab-note">Kontoritele, fuajeedele, hotellidele, restoranidele, kliinikutele, kauplustele, näidiskorteritele ja kodudele.</p>
+            <fieldset class="periods two">
+              <legend>Teose liik</legend>
+              <label><input type="radio" name="artwork-type" value="original" checked><span>Originaalmaal</span></label>
+              <label><input type="radio" name="artwork-type" value="print"><span>Segatehnika</span></label>
+            </fieldset>
+            <div class="field">
+              <div class="field-top"><label for="long-count">Teoste arv</label><input class="num" id="long-count" type="number" inputmode="numeric" min="1" max="20" step="1" value="1"></div>
+              <input type="range" id="long-count-range" min="1" max="20" step="1" value="1" aria-label="Teoste arv">
+            </div>
+            <div class="field" id="price-field">
+              <div class="field-top"><label for="long-price">Teose hind (€)</label><input class="num" id="long-price" type="number" inputmode="numeric" min="100" max="50000" step="50" value="1000" style="width:120px"></div>
+              <input type="range" id="long-price-range" min="300" max="10000" step="100" value="1000" aria-label="Teose hind eurodes">
+              <p class="hint">Kui teosed on erineva hinnaga, sisesta keskmine hind.</p>
+            </div>
+            <fieldset class="periods" id="size-field" hidden>
+              <legend>Teose suurus</legend>
+              <label><input type="radio" name="print-size" value="small" checked><span>kuni 60×80 cm</span></label>
+              <label><input type="radio" name="print-size" value="medium"><span>kuni 100×80 cm</span></label>
+              <label><input type="radio" name="print-size" value="large"><span>kuni 150×100 cm</span></label>
+              <p class="hint" style="grid-column:1/-1;margin-top:4px">Segatehnikas teos on soodsam kui originaalmaal. See on raamile pingutatud lõuend, mis on riputusvalmis ilma eraldi raamita.</p>
+            </fieldset>
+            <fieldset class="periods field">
+              <legend>Rendiperiood</legend>
+              <label><input type="radio" name="period" value="12" checked><span>12 kuud</span></label>
+              <label><input type="radio" name="period" value="24"><span>24 kuud</span></label>
+              <label><input type="radio" name="period" value="36"><span>36 kuud</span></label>
+            </fieldset>
+            <div class="consent">
+              <input type="checkbox" id="long-outside">
+              <label for="long-outside">Asukoht väljaspool Tallinnat ja Harjumaad</label>
+            </div>
+          </div>
+
+          <div id="panel-shoot" role="tabpanel" aria-labelledby="tab-shoot" hidden>
+            <p class="tab-note">Originaalteosed ja skulptuurlambid fotovõteteks, reklaamideks, filmideks ja telesaadeteks.</p>
+            <div class="field">
+              <div class="field-top"><label for="shoot-count">Teoste arv</label><input class="num" id="shoot-count" type="number" inputmode="numeric" min="1" max="20" step="1" value="3"></div>
+              <input type="range" id="shoot-count-range" min="1" max="20" step="1" value="3" aria-label="Teoste arv">
+            </div>
+            <div class="field">
+              <div class="field-top"><label for="shoot-days">Päevade arv</label><input class="num" id="shoot-days" type="number" inputmode="numeric" min="1" max="30" step="1" value="1"></div>
+              <input type="range" id="shoot-days-range" min="1" max="30" step="1" value="1" aria-label="Päevade arv">
+            </div>
+            <p class="hint">Mida rohkem teoseid, seda soodsam: 3 teosest −10%, 6 teosest −15%.</p>
+            <div class="consent" style="margin-top:20px">
+              <input type="checkbox" id="shoot-outside">
+              <label for="shoot-outside">Võte toimub väljaspool Tallinnat ja Harjumaad</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-out" aria-live="polite">
+          <div class="out-label" id="out-label">Kuumakse</div>
+          <div class="out-big" id="out-big">30 € kuus</div>
+          <p class="out-sub" id="out-sub">1 teos · 30 € teose kohta kuus</p>
+          <dl class="out-rows" id="out-rows"></dl>
+          <p class="out-extra" id="out-extra" hidden></p>
+          <div class="out-label" style="margin-top:22px">Hinna sees</div>
+          <ul class="out-incl check" id="out-incl"></ul>
+          <a class="btn btn-main" href="#paring" id="calc-cta">Küsi pakkumist</a>
+          <p class="disclaimer">Hinnad on soovituslikud. Täpse hinna saad kirjalikus pakkumises. <button type="button" class="linkbtn" data-open="terms">Vaata rendi põhitingimusi</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="wrap" aria-labelledby="about-title">
+    <div class="about">
+      <div class="initials" aria-hidden="true">MK</div>
+      <div>
+        <h2 id="about-title">Merilin Kejser</h2>
+        <p class="role">Kuraator · Kejser Gallery</p>
+        <p class="body">Kejser Gallery on Tallinnas asuv veebigalerii, mis toob kunstnike originaalloomingu kodudesse, kontoritesse ja võtteplatsidele. Galerii taga on Merilin Kejser, kellel on kümme aastat kogemust disainerina ning oskused raamimises ja paigalduses. Galerii kunstnike seas on fotograaf ja kunstnik Kalle Veesaar. Iga teos jõuab sinu seinale raamituna ja paigaldatuna.</p>
+        <div class="hero-cta">
+          <a class="btn btn-ghost" href="https://merilinkejser.wixsite.com/my-site-1" target="_blank" rel="noopener">Vaata galeriid</a>
+          <a class="btn btn-main" href="#paring">Küsi pakkumist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="band" aria-labelledby="packs-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Näidispaketid</div>
+        <h2 id="packs-title" style="margin-top:14px">Vali oma ruumi suurus</h2>
+        <p>Näited põhinevad 1000-eurosel teosel ja 12-kuulisel rendil.</p>
+      </div>
+      <div class="packs">
+        <article class="pack"><h3>Üks teos</h3><p class="count">1 teos</p><p class="p">30 € kuus</p><button type="button" class="btn btn-ghost" data-pack="1">Arvuta see pakett</button></article>
+        <article class="pack"><h3>Kontor</h3><p class="count">5 teost</p><p class="p">150 € kuus</p><button type="button" class="btn btn-ghost" data-pack="5">Arvuta see pakett</button></article>
+        <article class="pack"><h3>Fuajee</h3><p class="count">10 teost</p><p class="p">300 € kuus</p><button type="button" class="btn btn-ghost" data-pack="10">Arvuta see pakett</button></article>
+      </div>
+      <div class="pack-incl">
+        <div class="out-label">Hinnas sisaldub</div>
+        <ul class="check">
+          <li>Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal</li>
+          <li>Üks tasuta vahetus aastas</li>
+          <li>Väljaostu võimalus</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Request form -->
+  <section class="wrap" id="paring" aria-labelledby="form-title">
+    <div class="book">
+      <div class="side">
+        <div class="eyebrow">Päring</div>
+        <h2 id="form-title" style="margin-top:14px">Küsi pakkumist</h2>
+        <p>Saada oma arvutus ja soovi korral foto seinast. Vastan ühe tööpäeva jooksul ja saadan kirjaliku pakkumise koos kuni kolme sobiva teosega.</p>
+        <p>Pakkumise küsimine ei kohusta sind millekski.</p>
+      </div>
+      <div>
+        <form id="form" name="rendipaering" method="POST" action="/" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="rendipaering">
+          <input type="hidden" name="rendi-tyyp" id="rent-type" value="Pikaajaline rent">
+          <p hidden><label>Ära täida: <input name="bot-field"></label></p>
+          <div class="f2">
+            <div><label for="name">Nimi <span class="req">*</span></label><input id="name" name="nimi" autocomplete="name" required><div class="err" id="name-err"></div></div>
+            <div><label for="email">E-post <span class="req">*</span></label><input id="email" name="e-post" type="email" autocomplete="email" required><div class="err" id="email-err"></div></div>
+          </div>
+          <div class="f2">
+            <div><label for="phone">Telefon <span class="opt">(valikuline)</span></label><input id="phone" name="telefon" type="tel" autocomplete="tel"><div class="err" id="phone-err"></div></div>
+            <div><label for="company">Ettevõte <span class="opt">(valikuline)</span></label><input id="company" name="ettevote" autocomplete="organization"></div>
+          </div>
+          <div><label for="message">Sõnum <span class="opt">(valikuline)</span></label><textarea id="message" name="sonum" placeholder="Näiteks ruumi suurus, seinte värv või sinu lemmikstiil"></textarea></div>
+          <div>
+            <label for="summary">Arvutuse kokkuvõte</label>
+            <textarea id="summary" name="arvutus"></textarea>
+            <p class="hint" style="margin-top:6px">Täidetakse kalkulaatorist automaatselt. Võid seda muuta.</p>
+          </div>
+          <div>
+            <label for="photo">Foto seinast <span class="opt">(valikuline, kuni 8 MB)</span></label>
+            <input id="photo" name="foto" type="file" accept="image/*">
+            <div class="err" id="photo-err"></div>
+          </div>
+          <div>
+            <div class="consent">
+              <input type="checkbox" id="consent" name="noustumine" value="Jah">
+              <label for="consent">Nõustun, et Kejser Gallery kasutab minu andmeid ainult sellele päringule vastamiseks. <button type="button" class="linkbtn" data-open="privacy">Privaatsuspoliitika</button></label>
+            </div>
+            <div class="err" id="consent-err"></div>
+          </div>
+          <button class="btn btn-main" type="submit">Küsi pakkumist</button>
+          <div class="err" id="send-err" role="alert"></div>
+        </form>
+        <div class="ok" id="ok" hidden tabindex="-1">
+          <h3>Aitäh, päring on saadetud!</h3>
+          <p>Vastan ühe tööpäeva jooksul aadressile, mille sisestasid. Kui sul on veel fotosid seinast, saad need saata vastuseks minu kirjale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <h2 id="faq-title" style="margin-bottom:28px">Korduma kippuvad küsimused</h2>
+      <details><summary>Kui palju maksab kunsti rentimine?</summary><p>Originaalmaali kuurent on 3% teose hinnast. Näiteks 1000-eurose teose rent maksab 30 € kuus. Segatehnikas teose kuurent on 5% teose hinnast, alates 20 € kuus. Täpse hinna saad kirjalikus pakkumises.</p></details>
+      <details><summary>Kui pikk on minimaalne rendiperiood?</summary><p>Pikaajalise rendi minimaalne periood on 12 kuud. Valida saad 12, 24 või 36 kuu vahel.</p></details>
+      <details><summary>Mis on rendihinna sees?</summary><p>Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal ning üks tasuta vahetus aastas sama kunstniku teise teose vastu. Lisavahetused on eraldi hinnaga.</p></details>
+      <details><summary>Mis on segatehnikas teos?</summary><p>Segatehnikas teos sünnib mitme tehnika ja materjali koosmõjul – näiteks lõuendile trükitud alus, millele kunstnik lisab käsitsi värve ja muid materjale. Teos on raamile pingutatud ja riputusvalmis. Iga teos on ainulaadne ja selle rent algab 20 eurost kuus.</p></details>
+      <details><summary>Kas renditud teose saab välja osta?</summary><p>Jah, teose saab igal ajal välja osta. Väljaostu tingimused on kirjas pakkumises.</p></details>
+      <details><summary>Kas te paigaldate ka väljaspool Harjumaad?</summary><p>Jah, paigaldame üle Eesti. Transport ja paigaldus väljaspool Tallinnat ja Harjumaad on eraldi hinnaga.</p></details>
+      <details><summary>Kui palju maksab kunsti rent fotovõtteks?</summary><p>Päevarent on 50 € teose kohta, minimaalne tellimus on 150 €. 3 teosest kehtib 10% ja 6 teosest 15% soodustus. Hinna sees on turvaline transport, paigaldus ja äraviimine Tallinnas ja Harjumaal.</p></details>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <img src="img/kejser-logo-valge.svg" alt="" width="93" height="150">
+      <h2 id="final-title">Originaalkunst sinu seinal juba sel kuul</h2>
+      <p>Alates 30 € kuus. Raamimine, tarne ja paigaldus hinna sees.</p>
+      <a class="btn btn-main" href="#paring">Küsi pakkumist</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand-mark" href="https://merilinkejser.wixsite.com/my-site-1" target="_blank" rel="noopener" aria-label="Kejser Gallery avaleht">
+      <img src="img/kejser-logo-valge.svg" alt="" width="35" height="56">
+      <span>Kejser Gallery</span>
+    </a>
+    <div class="foot-info">
+      <div><a href="mailto:merilin.kejser@gmail.com">merilin.kejser@gmail.com</a> · Tallinn, Eesti</div>
+      <div class="links">
+        <a href="https://merilinkejser.wixsite.com/my-site-1" target="_blank" rel="noopener">Veebileht</a>
+        <button type="button" class="linkbtn" data-open="terms">Rendi põhitingimused</button>
+        <button type="button" class="linkbtn" data-open="privacy">Privaatsuspoliitika</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky"><a class="btn btn-main" href="#kalkulaator">Arvuta hind</a></div>
+
+<dialog id="terms" aria-labelledby="terms-title">
+  <h2 id="terms-title">Rendi põhitingimused</h2>
+  <p>Need on rendi peamised tingimused. Täpsed tingimused lepime kokku kirjalikus lepingus.</p>
+  <h3>Pikaajaline rent</h3>
+  <ul>
+    <li>Minimaalne rendiperiood on 12 kuud.</li>
+    <li>Originaalmaali kuurent on 3% teose hinnast. Segatehnikas teose kuurent on 5% teose hinnast. Arve esitatakse iga kuu alguses.</li>
+    <li>Segatehnikas teos on raamile pingutatud lõuend ja selle hinna sees on tarne ja paigaldus. Raam on soovi korral lisatasu eest.</li>
+    <li>Originaalmaali raamimine, tarne ja paigaldus Tallinnas ja Harjumaal on hinna sees.</li>
+    <li>Kord aastas saab teose tasuta vahetada sama kunstniku teise teose vastu. Lisavahetused on eraldi hinnaga.</li>
+    <li>Kui rent lõpetatakse enne 12 kuu möödumist, tasub rentnik ülejäänud kuude rendi.</li>
+    <li>Rentnik hoiab teost heaperemehelikult ega tõsta ega paigalda seda ümber ilma kokkuleppeta.</li>
+    <li>Kui teos saab kahjustada või kaob, hüvitab rentnik parandamise kulu või teose hinna.</li>
+    <li>Teose saab igal ajal välja osta hinnakirja hinnaga.</li>
+    <li>Rendiperioodi lõpus saab rendi pikendada või viime teosed ära.</li>
+  </ul>
+  <h3>Fotovõtted ja produktsioonid</h3>
+  <ul>
+    <li>Päevarent on 50 € teose kohta, minimaalne tellimus on 150 €.</li>
+    <li>Hinna sees on transport, paigaldus ja äraviimine Tallinnas ja Harjumaal.</li>
+    <li>Teoseid ei tohi värvida, katta, kinnitada kleepeainega ega muul viisil muuta.</li>
+    <li>Kui teos on pildil selgelt nähtav, palume märkida kunstniku ja Kejser Gallery nime.</li>
+    <li>Kahjustuse või kaotsimineku korral hüvitab tellija parandamise kulu või teose hinna.</li>
+  </ul>
+  <button class="btn btn-ghost close" type="button" data-close>Sulge</button>
+</dialog>
+
+<dialog id="privacy" aria-labelledby="privacy-title">
+  <h2 id="privacy-title">Privaatsuspoliitika</h2>
+  <h3>Vastutav töötleja</h3><p>[NIMI VÕI ETTEVÕTE, REGISTRIKOOD], Tallinn, Eesti. Kontakt: merilin.kejser@gmail.com.</p>
+  <h3>Milliseid andmeid kogume</h3><p>Nimi, e-post, telefon (valikuline), ettevõte (valikuline), sõnum, arvutuse kokkuvõte ja foto seinast (valikuline), mille saadad päringuvormiga.</p>
+  <h3>Miks kogume</h3><p>Et vastata sinu päringule ja teha pakkumine. Õiguslik alus on sinu nõusolek ja lepingu sõlmimiseks vajalikud sammud.</p>
+  <h3>Kellele andmeid edastame</h3><p>Vormi andmed liiguvad veebimajutaja Netlify kaudu, kes edastab need meile e-postiga. Me ei müü ega jaga andmeid turunduseks.</p>
+  <h3>Kui kaua hoiame</h3><p>Päringuid hoiame kuni 12 kuud. Kui sõlmime lepingu, hoiame lepingu ja arvetega seotud andmeid seaduses nõutud aja (raamatupidamisdokumente 7 aastat).</p>
+  <h3>Küpsised</h3><p>See leht ei kasuta küpsiseid ega jälgimistööriistu.</p>
+  <h3>Sinu õigused</h3><p>Võid küsida oma andmete koopiat, neid parandada või kustutada ning nõusoleku igal ajal tagasi võtta, kirjutades merilin.kejser@gmail.com. Kaebuse saad esitada Andmekaitse Inspektsioonile (www.aki.ee).</p>
+  <button class="btn btn-ghost close" type="button" data-close>Sulge</button>
+</dialog>
+
+<script>
+// Pricing rules – change these numbers if prices change
+const PRICING = {
+  monthlyRate: 0.03,          // long-term rent of an original per month, share of artwork price
+  mixedMediaRate: 0.05,       // mixed-media works: higher share, as delivery and installation cost the same as for originals
+  mixedMediaPrices: {         // mixed-media sale price by size (€); monthly rent = price × mixedMediaRate
+    small:  {label: "kuni 60×80 cm",   price: 400},
+    medium: {label: "kuni 100×80 cm",  price: 600},
+    large:  {label: "kuni 150×100 cm", price: 900}
+  },
+  shootDayPrice: 50,          // € per artwork per day
+  shootMinimum: 150,          // € minimum order for photo shoots
+  shootDiscounts: [           // largest matching discount applies
+    {fromCount: 6, rate: 0.15},
+    {fromCount: 3, rate: 0.10}
+  ]
+};
+
+const euro = value => new Intl.NumberFormat("et-EE", {maximumFractionDigits: 2}).format(value) + " €";
+const plural = (count, one, many) => count === 1 ? one : many;
+const byId = id => document.getElementById(id);
+
+// Keep a number input and a range slider in sync
+function linkInputs(numberId, rangeId) {
+  const numberInput = byId(numberId), rangeInput = byId(rangeId);
+  numberInput.addEventListener("input", () => {
+    const value = Number(numberInput.value);
+    if (Number.isFinite(value) && value > 0) rangeInput.value = Math.min(Math.max(value, rangeInput.min), rangeInput.max);
+    updateCalculator();
+  });
+  numberInput.addEventListener("blur", () => { numberInput.value = clamp(numberInput); updateCalculator(); });
+  rangeInput.addEventListener("input", () => { numberInput.value = rangeInput.value; updateCalculator(); });
+}
+function clamp(input) {
+  const value = Math.round(Number(input.value));
+  const min = Number(input.min), max = Number(input.max);
+  if (!Number.isFinite(value) || value < min) return min;
+  return Math.min(value, max);
+}
+
+let mode = "long";
+
+function calculateLong() {
+  const count = clamp(byId("long-count"));
+  const price = clamp(byId("long-price"));
+  const type = document.querySelector("input[name=artwork-type]:checked").value;
+  const size = PRICING.mixedMediaPrices[document.querySelector("input[name=print-size]:checked").value];
+  const months = Number(document.querySelector("input[name=period]:checked").value);
+  const outside = byId("long-outside").checked;
+  const perArtwork = type === "print" ? size.price * PRICING.mixedMediaRate : price * PRICING.monthlyRate;
+  const purchasePrice = type === "print" ? size.price : price;
+  const monthly = perArtwork * count;
+  return {count, price, type, size, months, outside, perArtwork, monthly, total: monthly * months, purchase: purchasePrice * count};
+}
+
+function calculateShoot() {
+  const count = clamp(byId("shoot-count"));
+  const days = clamp(byId("shoot-days"));
+  const outside = byId("shoot-outside").checked;
+  const gross = count * days * PRICING.shootDayPrice;
+  const discount = PRICING.shootDiscounts.find(d => count >= d.fromCount);
+  const discountRate = discount ? discount.rate : 0;
+  const afterDiscount = gross * (1 - discountRate);
+  const total = Math.max(afterDiscount, PRICING.shootMinimum);
+  return {count, days, outside, gross, discountRate, total, minimumApplied: afterDiscount < PRICING.shootMinimum};
+}
+
+function updateCalculator() {
+  const rows = [], incl = [];
+  let summary;
+  if (mode === "long") {
+    const r = calculateLong();
+    byId("out-label").textContent = "Kuumakse";
+    byId("out-big").textContent = euro(r.monthly) + " kuus";
+    byId("out-sub").textContent = `${r.count} ${plural(r.count, "teos", "teost")} · ${euro(r.perArtwork)} teose kohta kuus`;
+    rows.push([`Kokku ${r.months} kuu eest`, euro(r.total)]);
+    rows.push(["Teoste ostuhind oleks", euro(r.purchase)]);
+    incl.push(r.type === "print" ? "Tarne ja paigaldus Tallinnas ja Harjumaal (raamile pingutatud lõuend, raam soovi korral lisatasu eest)" : "Raamimine, tarne ja paigaldus Tallinnas ja Harjumaal", "Kord aastas tasuta vahetus (lisavahetused eraldi hinnaga)", "Võimalus teos välja osta");
+    setExtra(r.outside ? "Transport ja paigaldus väljaspool Tallinnat ja Harjumaad on eraldi hinnaga. Täpse summa saad pakkumises." : "");
+    summary = [
+      "Rendi tüüp: pikaajaline rent",
+      `Teoste arv: ${r.count}`,
+      r.type === "print" ? `Teose liik: segatehnika, ${r.size.label}` : "Teose liik: originaalmaal",
+      r.type === "print" ? null : `Teose hind: ${euro(r.price)}`,
+      `Rendiperiood: ${r.months} kuud`,
+      `Kuumakse: ${euro(r.monthly)}`,
+      `Kokku ${r.months} kuu eest: ${euro(r.total)}`,
+      `Asukoht: ${r.outside ? "väljaspool Tallinnat ja Harjumaad" : "Tallinn või Harjumaa"}`
+    ].filter(Boolean);
+  } else {
+    const r = calculateShoot();
+    byId("out-label").textContent = "Kokku";
+    byId("out-big").textContent = euro(r.total);
+    byId("out-sub").textContent = `${r.count} ${plural(r.count, "teos", "teost")} × ${r.days} ${plural(r.days, "päev", "päeva")} × ${euro(PRICING.shootDayPrice)}`;
+    if (r.discountRate) rows.push([`Mitme teose soodustus −${r.discountRate * 100}%`, "−" + euro(r.gross * r.discountRate)]);
+    if (r.minimumApplied) rows.push(["Minimaalne tellimus", euro(PRICING.shootMinimum)]);
+    incl.push("Turvaline transport, paigaldus ja äraviimine Tallinnas ja Harjumaal", "Suured teosed vajavad õiget pakendit ja sõidukit – sina ei vastuta transpordi eest");
+    setExtra((r.outside ? "Transport väljaspool Tallinnat ja Harjumaad on eraldi hinnaga. " : "") + "Agentuuridele ja sisekujundajatele: kui sinu soovitusel ostab või rendib klient meilt kunsti, maksame sulle 10% tehingu summast.");
+    summary = [
+      "Rendi tüüp: fotovõte või produktsioon",
+      `Teoste arv: ${r.count}`,
+      `Päevade arv: ${r.days}`,
+      r.discountRate ? `Soodustus: −${r.discountRate * 100}%` : null,
+      `Kokku: ${euro(r.total)}`,
+      `Asukoht: ${r.outside ? "väljaspool Tallinnat ja Harjumaad" : "Tallinn või Harjumaa"}`
+    ].filter(Boolean);
+  }
+  byId("out-rows").innerHTML = rows.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("");
+  byId("out-incl").innerHTML = incl.map(text => `<li>${text}</li>`).join("");
+  byId("rent-type").value = mode === "long" ? "Pikaajaline rent" : "Fotovõte või produktsioon";
+  if (!summaryEdited) byId("summary").value = summary.join("\n");
+}
+function setExtra(text) {
+  const extra = byId("out-extra");
+  extra.textContent = text;
+  extra.hidden = !text;
+}
+
+// Tabs
+const tabs = [byId("tab-long"), byId("tab-shoot")];
+function selectTab(tab) {
+  mode = tab.id === "tab-long" ? "long" : "shoot";
+  tabs.forEach(t => {
+    const active = t === tab;
+    t.setAttribute("aria-selected", active);
+    t.tabIndex = active ? 0 : -1;
+    byId(t.getAttribute("aria-controls")).hidden = !active;
+  });
+  summaryEdited = false;
+  updateCalculator();
+}
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => selectTab(tab));
+  tab.addEventListener("keydown", e => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    const next = tabs[(index + 1) % tabs.length];
+    next.focus(); selectTab(next);
+  });
+});
+
+// Inputs
+linkInputs("long-count", "long-count-range");
+linkInputs("long-price", "long-price-range");
+linkInputs("shoot-count", "shoot-count-range");
+linkInputs("shoot-days", "shoot-days-range");
+document.querySelectorAll("input[name=period], input[name=print-size], #long-outside, #shoot-outside").forEach(el => el.addEventListener("change", updateCalculator));
+function showArtworkType() {
+  const isPrint = document.querySelector("input[name=artwork-type]:checked").value === "print";
+  byId("price-field").hidden = isPrint;
+  byId("size-field").hidden = !isPrint;
+  updateCalculator();
+}
+document.querySelectorAll("input[name=artwork-type]").forEach(el => el.addEventListener("change", showArtworkType));
+
+// Summary stays editable: once the visitor edits it, stop overwriting
+let summaryEdited = false;
+byId("summary").addEventListener("input", () => { summaryEdited = true; });
+byId("calc-cta").addEventListener("click", () => { summaryEdited = false; updateCalculator(); });
+
+// Sample packages fill the calculator
+document.querySelectorAll("[data-pack]").forEach(button => button.addEventListener("click", () => {
+  selectTab(byId("tab-long"));
+  byId("long-count").value = byId("long-count-range").value = button.dataset.pack;
+  document.querySelector("input[name=artwork-type][value='original']").checked = true;
+  showArtworkType();
+  byId("long-price").value = byId("long-price-range").value = 1000;
+  document.querySelector("input[name=period][value='12']").checked = true;
+  updateCalculator();
+  byId("kalkulaator").scrollIntoView();
+}));
+
+document.querySelector("[data-pick-print]").addEventListener("click", () => {
+  selectTab(byId("tab-long"));
+  document.querySelector("input[name=artwork-type][value='print']").checked = true;
+  showArtworkType();
+});
+
+// Form validation, then send to Netlify Forms
+const form = byId("form");
+const MAX_PHOTO_BYTES = 8 * 1024 * 1024;
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  let ok = true;
+  const setError = (id, message) => { byId(id).textContent = message; if (message) ok = false; };
+  setError("name-err", byId("name").value.trim() ? "" : "Sisesta oma nimi.");
+  setError("email-err", /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(byId("email").value.trim()) ? "" : "Sisesta korrektne e-posti aadress.");
+  const phone = byId("phone").value.trim();
+  setError("phone-err", !phone || /^[+\d][\d\s-]{6,}$/.test(phone) ? "" : "Kontrolli telefoninumbrit.");
+  const photo = byId("photo").files[0];
+  setError("photo-err", !photo ? "" : !photo.type.startsWith("image/") ? "Lisa pildifail (nt JPG või PNG)." : photo.size > MAX_PHOTO_BYTES ? "Foto on liiga suur. Maksimaalne suurus on 8 MB." : "");
+  setError("consent-err", byId("consent").checked ? "" : "Märgi nõusolek, et saaksin päringule vastata.");
+  if (!ok) { form.querySelector(".err:not(:empty)")?.previousElementSibling?.focus?.(); return; }
+
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true; button.textContent = "Saadan…";
+  byId("send-err").textContent = "";
+  fetch("/", {method: "POST", body: new FormData(form)})
+    .then(response => {
+      if (!response.ok) throw new Error(response.status);
+      form.hidden = true;
+      byId("ok").hidden = false;
+      byId("ok").focus();
+    })
+    .catch(() => {
+      button.disabled = false; button.textContent = "Küsi pakkumist";
+      byId("send-err").textContent = "Saatmine ebaõnnestus. Proovi uuesti või kirjuta merilin.kejser@gmail.com.";
+    });
+});
+
+// Dialogs
+document.querySelectorAll("[data-open]").forEach(button => button.addEventListener("click", () => byId(button.dataset.open).showModal()));
+document.querySelectorAll("dialog").forEach(dialog => {
+  dialog.querySelector("[data-close]").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+});
+
+updateCalculator();
+</script>
+</body>
+</html>
